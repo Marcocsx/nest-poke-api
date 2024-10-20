@@ -13,7 +13,7 @@ export class SeedService {
 
   async populateDB() {
 
-    const { data } = await firstValueFrom(this.http.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=650'));
+    const { data } = await firstValueFrom(this.http.get<PokeResponse>('https://pokeapi.co/api/v2/pokemon?limit=10'));
 
     data.results.forEach(({ name, url }) => {
       const segmentes = url.split('/');
